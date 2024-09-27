@@ -1,0 +1,14 @@
+version: 3
+
+tasks:
+  default:
+    silent: true
+    cmds: ["task -l"]
+
+  build:
+    requires:
+      vars:
+        - go
+        - tf
+    cmds:
+      - docker build . --build-arg GO_VERSION={{ .go }} --build-arg TERRAFORM_VERSION={{ .tf }} --tag golang-terraform:go-{{ .go }}-tf-{{ .tf }}
