@@ -10,3 +10,5 @@ RUN cd /tmp && \
     wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /tmp && \
     mv terraform /usr/local/bin/terraform
+
+RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
